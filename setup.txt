@@ -1,0 +1,5 @@
+run virtual environment using:
+source venv/bin/activate
+ctrl + shift + P
+Python:Select Interpreter
+Select venv
