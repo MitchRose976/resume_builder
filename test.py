@@ -1,16 +1,3 @@
-# print ('Hello my name is Mitchell')
-# from bardapi import Bard
-# import os
-# from dotenv import load_dotenv
-
-# load_dotenv()
-# token = os.getenv('GOOGLE_BARD_API_KEY')
-
-# bard = Bard(token = token)
-
-# result = bard.get_answer("what is the current stock price of Nvidia?")
-# print(result)
-
 import openai
 from dotenv import load_dotenv
 import os
