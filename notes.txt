@@ -1,0 +1,52 @@
+Stage 1
+
+1) As a developer, I want a log in page
+
+2) As a user, I want to input a list of job titles I am interested in as well as my personal info. 
+These should be saved to the users profile after they set up the profile.
+
+3) As a developer, I want to scrape indeed for job postings within the search radius using the job titles list
+from the users profile. When I am scraping, I will need to get the job title, the company name, the company rating,
+the location, the salary if available, the type of employment (contract or full-time),
+the industry, and the qualifications summary. I will also want the link for this position.
+
+Stage 2
+
+1) As a user, I want to apply to jobs on my board with 1 click. This means that when the user clicks apply,
+a resume will be generated for them and used to apply to the job. I will need to check how this can be done as many
+job boards have forms to fill out and other modals.
+
+INDEED PAGE DOCUMENTATION
+
+# all jobs on page
+# <li class="css-5lfssm eu4oa1w0"
+
+# title 
+# <li> === <div class="cardOutline"/> === <div class="slider-container"/> === <div class="slider_list"/> === <div class="slider_item"/> === <div class="job_seen_beacon"/> === <table class="jobCard_mainContent"/> === <tbody /> === <tr /> === <td class="resultContent" /> === <div /> === <h2 class="jobTitle"/> === <a /> === <span/>
+
+# company name
+# <li> === <div class="cardOutline"/> === <div class="slider-container"/> === <div class="slider_list"/> === <div class="slider_item"/> === <div class="job_seen_beacon"/> === <table class="jobCard_mainContent"/> === <tbody /> === <tr /> === <td class="resultContent" /> === <div /> === <div class="heading6 company_location"/> === <div/> === <span class="company_name">
+
+# rating
+# <li> === <div class="cardOutline"/> === <div class="slider-container"/> === <div class="slider_list"/> === <div class="slider_item"/> === <div class="job_seen_beacon"/> === <table class="jobCard_mainContent"/> === <tbody /> === <tr /> === <td class="resultContent" /> === <div /> === <div class="heading6 company_location"/> === <div/> === <span class="ratingDisplay"/> === <span class="ratingDisplay withRatingLink"/> === <span class="ratingNumber"/> === <span>
+
+# location
+# <li> === <div class="cardOutline"/> === <div class="slider-container"/> === <div class="slider_list"/> === <div class="slider_item"/> === <div class="job_seen_beacon"/> === <table class="jobCard_mainContent"/> === <tbody /> === <tr /> === <td class="resultContent" /> === <div /> === <div class="heading6 company_location"/> === <div class="companyLocation"/>
+
+# salary (not always available)
+# <li> === <div class="cardOutline"/> === <div class="slider-container"/> === <div class="slider_list"/> === <div class="slider_item"/> === <div class="job_seen_beacon"/> === <table class="jobCard_mainContent"/> === <tbody /> === <tr /> === <td class="resultContent" /> === <div class="heading6 salaryOnly"/> === <div class="salary-snipper/> === <div class="attribute_snippet"/>
+
+# type
+# <li> === <div class="cardOutline"/> === <div class="slider-container"/> === <div class="slider_list"/> === <div class="slider_item"/> === <div class="job_seen_beacon"/> === <table class="jobCard_mainContent"/> === <tbody /> === <tr /> === <td class="resultContent" /> === <div class="heading6 salaryOnly"/> === <div class="metadata"/> === <div class="attribute_snipper"/>
+
+# info
+# <li> === <div class="cardOutline"/> === <div class="slider-container"/> === <div class="slider_list"/> === <div class="slider_item"/> === <div class="job_seen_beacon"/> === <table class="jobCardShelfContainer"/> === <tbody/> === <tr class="underShelfFooter"/> === <td/> === <div class="heading6 result-footer/> === <div class="job-snippet"/> === <ul/> === <li/> (there is multiple of these)
+
+# pagination
+# <nav role="navigation" aria-label="pagination" class="css-jbuxu0 ecydgvn0/>
+
+# pagination current page button
+# <div class="css-tvvxwd ecydgnv1"/> === <button data-testid="pagination-page-current" class="css-unq3de e8ju0x51"/>
+
+# pagination other pages
+# <div class="css-tvvxwd ecydgnv1"/> === <a data-testid="pagination-page-2" aria-label="2" class="css-163rxa6 e8ju0x50"/>
