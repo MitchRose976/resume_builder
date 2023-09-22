@@ -2,3 +2,4 @@
 venv/
 .env/
 myenv/
+__pychache__
