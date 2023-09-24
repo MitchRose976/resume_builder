@@ -2,20 +2,18 @@ from selenium import webdriver
 import requests
 from bs4 import BeautifulSoup
 import random
+from shared.constants import VALID_IP_ADDRESSES_FILE, PATH_TO_CHROME_DRIVER
 
 BASE_WEBSITE_URL = 'https://ca.indeed.com/'
 ROLE_TO_SEARCH_FOR = ['react', 'developer']
 LOCATION_TO_SEARCH_FOR = 'Mississauga'
 FORMATTED_URL = f''
 WEBSITE_URL = "https://ca.indeed.com/jobs?q=react+developer&l=Mississauga%2C+ON&from=searchOnHP&vjk=a26c35a8ed7ad327"
-# PATH_TO_CHROME_DRIVER = '/usr/local/bin/chromedriver/chromedriver-linux64'
-PATH_TO_CHROME_DRIVER = "/usr/bin/chromedriver"
 
-IP_ADDRESSES_FILE = 'assets/ip_addresses.txt'
 
 list_of_ips = []
 
-with open(IP_ADDRESSES_FILE, 'r') as file:
+with open(VALID_IP_ADDRESSES_FILE, 'r') as file:
     for line in file:
         # Remove leading and trailing whitespace and append to the list
         ip_address = line.strip()
@@ -38,13 +36,13 @@ driver.get(WEBSITE_URL)
 
 # Grab all job posting cards on page
 matches = driver.find_elements_by_tag_name("li")
+job_listings = driver.find_element_by_class_name("cardOutline")
 
-for match in matches:
-    if match.text != "":
-        print("mitch match: ", match.text)
+print('mitch job_listings: ', matches)
+
+for job in job_listings:
+    if job.text != "":
+        print("mitch job: ", job.text)
 
 # Close the webdriver after each iteration
 driver.quit()
-
-
-

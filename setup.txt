@@ -5,3 +5,6 @@ Python:Select Interpreter
 Select venv
 
 Need Python 3.10.12
+
+to declare modules, in terminal:
+export PYTHONPATH=/home/cheech976/Documents/resume_builder:$PYTHONPATH
