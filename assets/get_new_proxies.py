@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import requests, re
 from bs4 import BeautifulSoup
 
@@ -7,7 +8,7 @@ test_str = c.text
 a = re.finditer(regex, test_str, re.MULTILINE)
 with open("proxies_list.txt", 'w') as file:
     for i in a:
-       print(i.group(),file=file)
+        print(i.group(),file=file)
 #==========================================================
 
 c = requests.get("https://free-proxy-list.net/")
@@ -17,3 +18,5 @@ x = re.findall(regex, z)
 with open("proxies_list.txt", "a") as myfile:
     for i in x:
         print(i, file=myfile)
+        
+print('Job ran, proxies_list.txt populated')
